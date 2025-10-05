@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Happy Teacher's Day — From Zulkifal</title>
+  <style>
+    :root{
+      --bg1:#05060a; --bg2:#071433; --neon1:#33ff88; --neon2:#9b7cff; --neon3:#ff6ec7;
+      --glass: rgba(255,255,255,0.03);
+      --card-width: min(980px, 92vw);
+      --glow: 0 0 18px rgba(51,255,136,0.08), 0 0 48px rgba(155,124,255,0.03);
+      color-scheme: dark;
+      font-family: Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0; padding:32px; background:linear-gradient(180deg,var(--bg1),var(--bg2));
+      display:flex; align-items:center; justify-content:center; -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale; color:#eaf6ff;
+      background-attachment:fixed;
+      overflow:auto;
+    }
+
+    /* Animated circuit background (subtle) */
+    .bg-svg{
+      position:fixed; inset:0; z-index:0; pointer-events:none; opacity:0.55; mix-blend-mode:overlay;
+    }
+
+    .card{
+      position:relative; z-index:2; width:var(--card-width); max-width:1000px; border-radius:18px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      padding:36px; box-shadow: 0 10px 40px rgba(3,8,22,0.7), var(--glow);
+      border: 1px solid rgba(255,255,255,0.03);
+      overflow:hidden;
+    }
+
+    .header{
+      display:flex; gap:20px; align-items:center; margin-bottom:12px;
+    }
+    .badge{
+      width:84px; height:84px; border-radius:12px; display:grid; place-items:center;
+      background:linear-gradient(135deg, rgba(51,255,136,0.06), rgba(155,124,255,0.05));
+      border:1px solid rgba(255,255,255,0.04);
+      box-shadow: 0 6px 24px rgba(51,255,136,0.03) inset;
+    }
+    .badge svg{width:56px; height:56px; filter:drop-shadow(0 6px 18px rgba(0,0,0,0.6));}
+
+    h1{margin:0; font-size:36px; letter-spacing:2px; line-height:1; color:var(--neon1); text-shadow:0 0 18px rgba(51,255,136,0.12);}
+    h2{margin:0; font-size:14px; color:var(--neon2); margin-top:6px;}
+
+    .content{display:grid; grid-template-columns:1fr; gap:18px; margin-top:18px;}
+    p{margin:0; line-height:1.6; font-size:16px; color:rgba(234,246,255,0.95)}
+    .accent{color:var(--neon3); font-weight:600}
+    .codeish{font-family:ui-monospace,SFMono-Regular,Menlo,monospace; background:rgba(255,255,255,0.02); padding:8px 12px; border-radius:10px; display:inline-block}
+
+    .footer{display:flex; justify-content:space-between; align-items:center; gap:12px; margin-top:20px}
+    .from{font-weight:700; color:rgba(255,255,255,0.94)}
+    .actions{display:flex; gap:8px}
+    button{background:transparent; border:1px solid rgba(255,255,255,0.06); color:#eaf6ff; padding:8px 12px; border-radius:10px; cursor:pointer}
+    button.primary{background:linear-gradient(90deg, rgba(51,255,136,0.08), rgba(155,124,255,0.06)); border-color:rgba(155,124,255,0.18)}
+
+    /* neon title animation */
+    .neon-wrap{display:inline-block; position:relative}
+    .neon-wrap::after{
+      content:''; position:absolute; inset:0; pointer-events:none; border-radius:6px; box-shadow:0 0 40px rgba(155,124,255,0.05)
+    }
+
+    /* typed effect */
+    .typed{color:var(--neon1); font-weight:800}
+
+    /* particle canvas */
+    #particles{position:absolute; inset:0; z-index:1; pointer-events:none}
+
+    @media (min-width:720px){
+      .content{grid-template-columns: 1fr 360px}
+      .card{padding:40px}
+    }
+
+    /* small glow edges */
+    .edge-glow{position:absolute; inset:-2px; border-radius:20px; pointer-events:none; z-index:0; filter:blur(26px); opacity:0.6; mix-blend-mode:screen}
+
+    /* floating circuit lines */
+    .circuit-anim{animation: floaty 6s ease-in-out infinite}
+    @keyframes floaty{0%{transform:translateY(0)}50%{transform:translateY(-6px)}100%{transform:translateY(0)}}
+
+    /* subtle entrance */
+    .card{transform:translateY(10px); opacity:0; animation: enter 900ms cubic-bezier(.2,.9,.3,1) forwards}
+    @keyframes enter{to{transform:none; opacity:1}}
+
+  </style>
+</head>
+<body>
+  <!-- SVG background with animated lines -->
+  <svg class="bg-svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" aria-hidden>
+    <defs>
+      <linearGradient id="g1" x1="0" x2="1"><stop offset="0" stop-color="#07263a"/><stop offset="1" stop-color="#03102b"/></linearGradient>
+    </defs>
+    <rect width="100%" height="100%" fill="url(#g1)" />
+    <!-- Many circuit-like paths -->
+    <g stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" opacity="0.85">
+      <path class="circuit-anim" d="M40 800 L220 800 L220 700" stroke="#0b2550" />
+      <path class="circuit-anim" d="M1500 90 L1200 90 L1200 220" stroke="#072a44" />
+      <path class="circuit-anim" d="M120 100 L420 100 L420 240" stroke="#083050" />
+      <g stroke="#072e60" opacity="0.9">
+        <path d="M900 600 L1100 600 L1100 480" />
+        <path d="M300 480 L480 480 L480 380" />
+      </g>
+    </g>
+  </svg>
+
+  <canvas id="particles" width="1600" height="900"></canvas>
+
+  <main class="card" role="main">
+    <div class="edge-glow" style="background: linear-gradient(90deg, rgba(51,255,136,0.06), rgba(155,124,255,0.05));"></div>
+    <div class="header">
+      <div class="badge" aria-hidden>
+        <!-- simple chip icon -->
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="6" width="20" height="12" rx="2" stroke="#9b7cff" stroke-width="1.2"/>
+          <rect x="7" y="9" width="10" height="6" rx="1" fill="#0b2038" stroke="#33ff88" stroke-width="0.8"/>
+          <path d="M12 9v6" stroke="#33ff88" stroke-width="0.8"/>
+        </svg>
+      </div>
+      <div>
+        <div class="neon-wrap"><h1>HAPPY TEACHER'S DAY!</h1></div>
+        <h2>To my amazing Computer Teacher</h2>
+      </div>
+    </div>
+
+    <section class="content" aria-label="Card content">
+      <div>
+        <p><strong>Dear <span id="teacherName">Teacher</span>,</strong></p>
+        <p>You are the <span class="accent">CPU</span> of our classroom — always processing patience, storing wisdom, and debugging our mistakes with care.</p>
+        <p>Your lessons are full of logic, creativity, and inspiration to <span class="codeish">code our dreams</span>!</p>
+        <p>Every line you teach upgrades our minds and makes us smarter each day.</p>
+        <p>Thank you for teaching us with <span class="accent">passion</span> and guiding us through every "error."</p>
+        <p><strong class="typed">You’re not just a teacher — you’re the system that keeps our learning running perfectly!</strong></p>
+      </div>
+
+      <aside style="padding:18px; background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.02)); border-radius:12px; border:1px solid rgba(255,255,255,0.03)">
+        <p style="margin-bottom:12px;"><span style="font-weight:700">From:</span> <span id="fromName">Your Tech-Savvy Student</span></p>
+        <div style="display:flex; gap:10px; flex-wrap:wrap">
+          <button class="primary" id="animateBtn">Play Animation</button>
+          <button id="downloadBtn">Download as Image</button>
+          <button id="editBtn">Edit Text</button>
+        </div>
+        <hr style="opacity:0.06; margin:12px 0" />
+        <p style="font-size:13px; opacity:0.9">Tip: Click <strong>Edit Text</strong> to change the teacher or sender name before sharing.</p>
+      </aside>
+    </section>
+
+    <div class="footer">
+      <div class="from">Made with ❤ by Zulkifal</div>
+      <div class="actions">
+        <button id="shareBtn">Share Link</button>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    // ===== Simple particle background =====
+    const canvas = document.getElementById('particles');
+    const ctx = canvas.getContext('2d');
+    let W = canvas.width = innerWidth;
+    let H = canvas.height = innerHeight;
+    window.addEventListener('resize', ()=>{W=canvas.width=innerWidth; H=canvas.height=innerHeight;});
+
+    const particles = [];
+    for(let i=0;i<80;i++) particles.push({x:Math.random()*W,y:Math.random()*H,r:Math.random()*1.8+0.2,vx:(Math.random()-.5)*0.4, vy:(Math.random()-.5)*0.4,a:Math.random()*0.6+0.2});
+    function draw(){
+      ctx.clearRect(0,0,W,H);
+      for(const p of particles){
+        p.x += p.vx; p.y += p.vy;
+        if(p.x<0)p.x=W; if(p.x>W)p.x=0; if(p.y<0)p.y=H; if(p.y>H)p.y=0;
+        ctx.beginPath(); ctx.arc(p.x,p.y,p.r,0,Math.PI*2); ctx.fillStyle = 'rgba(155,124,255,'+p.a+')'; ctx.fill();
+      }
+      requestAnimationFrame(draw);
+    }
+    draw();
+
+    // ===== small entrance animation trigger and typed pulse =====
+    const animateBtn = document.getElementById('animateBtn');
+    let playing=false;
+    animateBtn.addEventListener('click', ()=>{
+      playing = !playing;
+      animateBtn.textContent = playing? 'Pause Animation' : 'Play Animation';
+      toggleAnimations(playing);
+    });
+
+    function toggleAnimations(play){
+      document.querySelectorAll('.circuit-anim').forEach(el=> el.style.animationPlayState = play? 'running':'paused');
+      document.querySelectorAll('.badge svg').forEach(el=> el.style.transition = play? 'transform 500ms linear':'');
+    }
+
+    // ===== Quick edit dialog =====
+    document.getElementById('editBtn').addEventListener('click', ()=>{
+      const teacher = prompt('Teacher name:', document.getElementById('teacherName').textContent) || 'Teacher';
+      const from = prompt('From (your name):', document.getElementById('fromName').textContent) || 'Your Tech-Savvy Student';
+      document.getElementById('teacherName').textContent = teacher.trim();
+      document.getElementById('fromName').textContent = from.trim();
+    });
+
+    // ===== Download as PNG (uses html2canvas CDN fallback) =====
+    document.getElementById('downloadBtn').addEventListener('click', async ()=>{
+      const card = document.querySelector('.card');
+      // try to use browser's foreignObject -> svg method
+      try{
+        const data = new XMLSerializer().serializeToString(card);
+      }catch(e){}
+      // Simple approach: open print window
+      const w = window.open('', '_blank');
+      w.document.write('<!doctype html><html><head><meta charset="utf-8"><title>Card</title></head><body>'+card.outerHTML+'</body></html>');
+      w.document.close();
+    });
+
+    // ===== Share button: copy HTML to clipboard (useful for quick publishing) =====
+    document.getElementById('shareBtn').addEventListener('click', async ()=>{
+      const html = `<!doctype html>\n${document.documentElement.outerHTML}`;
+      try{
+        await navigator.clipboard.writeText(html);
+        alert('Full page HTML copied to clipboard — paste into a file named index.html to publish.');
+      }catch(e){
+        alert('Cannot copy automatically. Use the Edit menu to copy the page HTML.');
+      }
+    });
+
+    // ===== small keyboard shortcut: E to edit =====
+    window.addEventListener('keydown', (e)=>{ if(e.key.toLowerCase()==='e') document.getElementById('editBtn').click(); });
+  </script>
+</body>
+</html>
